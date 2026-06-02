@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spice Garden</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Georgia,serif;
+  background-color:#0D1B3E;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iI0U4QzM0QSIgb3BhY2l0eT0iMC4zNSIvPjxjaXJjbGUgY3g9IjQwIiBjeT0iNSIgcj0iMC43IiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjI1Ii8+PGNpcmNsZSBjeD0iNzAiIGN5PSIxNSIgcj0iMS4yIiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjMiLz48Y2lyY2xlIGN4PSIyNSIgY3k9IjM1IiByPSIwLjgiIGZpbGw9IiNFOEMzNEEiIG9wYWNpdHk9IjAuMiIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNDAiIHI9IjEiIGZpbGw9IiNFOEMzNEEiIG9wYWNpdHk9IjAuMyIvPjxjaXJjbGUgY3g9IjUiIGN5PSI1NSIgcj0iMC43IiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSI0NSIgY3k9IjYwIiByPSIxLjEiIGZpbGw9IiNFOEMzNEEiIG9wYWNpdHk9IjAuMjgiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjY1IiByPSIwLjgiIGZpbGw9IiNFOEMzNEEiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIyMCIgY3k9Ijc1IiByPSIxIiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjI1Ii8+PGNpcmNsZSBjeD0iNTUiIGN5PSI3OCIgcj0iMC42IiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjE4Ii8+PC9zdmc+");
+  max-width:480px;
+  margin:0 auto;
+  padding-bottom:60px;
+  color:#F0E8C8;
+}
+
+.header{
+  background:#071029;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMSIgZmlsbD0iI0U4QzM0QSIgb3BhY2l0eT0iMC4zNSIvPjxjaXJjbGUgY3g9IjQwIiBjeT0iNSIgcj0iMC43IiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjI1Ii8+PGNpcmNsZSBjeD0iNzAiIGN5PSIxNSIgcj0iMS4yIiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjMiLz48Y2lyY2xlIGN4PSIyNSIgY3k9IjM1IiByPSIwLjgiIGZpbGw9IiNFOEMzNEEiIG9wYWNpdHk9IjAuMiIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNDAiIHI9IjEiIGZpbGw9IiNFOEMzNEEiIG9wYWNpdHk9IjAuMyIvPjxjaXJjbGUgY3g9IjUiIGN5PSI1NSIgcj0iMC43IiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjIiLz48Y2lyY2xlIGN4PSI0NSIgY3k9IjYwIiByPSIxLjEiIGZpbGw9IiNFOEMzNEEiIG9wYWNpdHk9IjAuMjgiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjY1IiByPSIwLjgiIGZpbGw9IiNFOEMzNEEiIG9wYWNpdHk9IjAuMjIiLz48Y2lyY2xlIGN4PSIyMCIgY3k9Ijc1IiByPSIxIiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjI1Ii8+PGNpcmNsZSBjeD0iNTUiIGN5PSI3OCIgcj0iMC42IiBmaWxsPSIjRThDMzRBIiBvcGFjaXR5PSIwLjE4Ii8+PC9zdmc+");
+  padding:36px 24px 28px;
+  text-align:center;
+}
+.welcome{font-size:10px;letter-spacing:.22em;color:#E8C84A;text-transform:uppercase;margin-bottom:6px;opacity:.65}
+.restaurant-name{font-size:30px;color:#E8C84A;letter-spacing:.04em;font-family:Georgia,serif;line-height:1.2}
+.tagline{font-size:13px;color:#B0A070;margin-top:5px;letter-spacing:.07em}
+.ornament{margin:13px auto 9px;width:140px;display:block}
+.stars{font-size:12px;letter-spacing:.22em;color:#E8C84A;opacity:.55;margin-bottom:5px}
+.contact{font-size:11px;color:#B0A070;line-height:1.9;opacity:.85}
+
+.hours-bar{
+  background:#071029;
+  padding:10px 24px;
+  text-align:center;
+  font-size:11px;
+  color:#B0A070;
+  letter-spacing:.04em;
+  border-bottom:1px solid rgba(232,200,74,0.18);
+}
+
+.menu-body{padding:20px 24px}
+.date-line{text-align:right;font-size:10px;color:#B0A070;margin-bottom:16px;letter-spacing:.05em;opacity:.6}
+
+.category{margin-bottom:30px}
+.cat-divider{text-align:center;margin-bottom:9px}
+.cat-divider img{width:180px;height:10px}
+.cat-title{
+  text-align:center;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.18em;
+  color:#E8C84A;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:11px 0;
+  border-bottom:1px solid rgba(232,200,74,0.18);
+}
+.item.unavailable{opacity:.35}
+.item-name{font-size:15px;font-family:Georgia,serif;color:#F0E8C8}
+.sold-out{
+  font-size:10px;
+  padding:1px 7px;
+  border:1px solid #E8C84A;
+  color:#E8C84A;
+  border-radius:10px;
+  margin-left:8px;
+  opacity:.5;
+  letter-spacing:.04em;
+}
+.item-price{font-size:15px;font-weight:500;font-family:Georgia,serif;color:#F5D876}
+
+.footer{
+  background:#071029;
+  padding:16px 24px;
+  text-align:center;
+}
+.footer img{width:140px;height:14px;display:block;margin:0 auto 9px}
+.footer-text{font-size:10px;color:#B0A070;letter-spacing:.1em;opacity:.6}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="welcome">— Welcome to —</div>
+  <div class="restaurant-name">Spice Garden</div>
+  <div class="tagline">Authentic Indian Flavours</div>
+  <img class="ornament" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxsaW5lIHgxPSIwIiB5MT0iNyIgeDI9IjUyIiB5Mj0iNyIgc3Ryb2tlPSIjRThDODRBIiBzdHJva2Utd2lkdGg9IjAuNyIgb3BhY2l0eT0iMC41NSIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNyIgcj0iMS41IiBmaWxsPSIjRThDODRBIiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjciIHI9IjIuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRThDODRBIiBzdHJva2Utd2lkdGg9IjAuNyIgb3BhY2l0eT0iMC43Ii8+PGNpcmNsZSBjeD0iODAiIGN5PSI3IiByPSIxLjUiIGZpbGw9IiNFOEM4NEEiIG9wYWNpdHk9IjAuNiIvPjxsaW5lIHgxPSI4OCIgeTE9IjciIHgyPSIxNDAiIHkyPSI3IiBzdHJva2U9IiNFOEM4NEEiIHN0cm9rZS13aWR0aD0iMC43IiBvcGFjaXR5PSIwLjU1Ii8+PC9zdmc+" alt="ornament"/>
+  <div class="stars">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <div class="contact">123 MG Road, Pune &nbsp;·&nbsp; +91 98765 43210</div>
+</div>
+
+<!-- HOURS -->
+<div class="hours-bar">Mon–Sun 11am–11pm &nbsp;|&nbsp; Free delivery above ₹500</div>
+
+<!-- MENU BODY -->
+<div class="menu-body">
+  <div class="date-line" id="date-line"></div>
+
+  <!-- STARTERS -->
+  <div class="category">
+    <div class="cat-divider"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjEwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxsaW5lIHgxPSIwIiB5MT0iNSIgeDI9IjEwNSIgeTI9IjUiIHN0cm9rZT0iI0U4Qzg0QSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMyIvPjxwb2x5Z29uIHBvaW50cz0iMTI1LDEgMTMyLDUgMTI1LDkgMTE4LDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U4Qzg0QSIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9IjAuNSIvPjxsaW5lIHgxPSIxNTUiIHkxPSI1IiB4Mj0iMjYwIiB5Mj0iNSIgc3Ryb2tlPSIjRThDODRBIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4zIi8+PC9zdmc+" alt=""/></div>
+    <div class="cat-title">Starters</div>
+    <div class="item">
+      <span class="item-name">Paneer Tikka</span>
+      <span class="item-price">₹220</span>
+    </div>
+    <div class="item">
+      <span class="item-name">Chicken Wings</span>
+      <span class="item-price">₹280</span>
+    </div>
+    <div class="item unavailable">
+      <span class="item-name">Veg Spring Roll<span class="sold-out">sold out</span></span>
+      <span class="item-price">₹180</span>
+    </div>
+  </div>
+
+  <!-- MAIN COURSE -->
+  <div class="category">
+    <div class="cat-divider"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjEwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxsaW5lIHgxPSIwIiB5MT0iNSIgeDI9IjEwNSIgeTI9IjUiIHN0cm9rZT0iI0U4Qzg0QSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMyIvPjxwb2x5Z29uIHBvaW50cz0iMTI1LDEgMTMyLDUgMTI1LDkgMTE4LDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U4Qzg0QSIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9IjAuNSIvPjxsaW5lIHgxPSIxNTUiIHkxPSI1IiB4Mj0iMjYwIiB5Mj0iNSIgc3Ryb2tlPSIjRThDODRBIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4zIi8+PC9zdmc+" alt=""/></div>
+    <div class="cat-title">Main Course</div>
+    <div class="item">
+      <span class="item-name">Butter Chicken</span>
+      <span class="item-price">₹350</span>
+    </div>
+    <div class="item">
+      <span class="item-name">Dal Makhani</span>
+      <span class="item-price">₹280</span>
+    </div>
+    <div class="item">
+      <span class="item-name">Paneer Butter Masala</span>
+      <span class="item-price">₹320</span>
+    </div>
+  </div>
+
+  <!-- BREADS -->
+  <div class="category">
+    <div class="cat-divider"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjEwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxsaW5lIHgxPSIwIiB5MT0iNSIgeDI9IjEwNSIgeTI9IjUiIHN0cm9rZT0iI0U4Qzg0QSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMyIvPjxwb2x5Z29uIHBvaW50cz0iMTI1LDEgMTMyLDUgMTI1LDkgMTE4LDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U4Qzg0QSIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9IjAuNSIvPjxsaW5lIHgxPSIxNTUiIHkxPSI1IiB4Mj0iMjYwIiB5Mj0iNSIgc3Ryb2tlPSIjRThDODRBIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4zIi8+PC9zdmc+" alt=""/></div>
+    <div class="cat-title">Breads</div>
+    <div class="item">
+      <span class="item-name">Garlic Naan</span>
+      <span class="item-price">₹60</span>
+    </div>
+    <div class="item">
+      <span class="item-name">Tandoori Roti</span>
+      <span class="item-price">₹40</span>
+    </div>
+  </div>
+
+  <!-- BEVERAGES -->
+  <div class="category">
+    <div class="cat-divider"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYwIiBoZWlnaHQ9IjEwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxsaW5lIHgxPSIwIiB5MT0iNSIgeDI9IjEwNSIgeTI9IjUiIHN0cm9rZT0iI0U4Qzg0QSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMyIvPjxwb2x5Z29uIHBvaW50cz0iMTI1LDEgMTMyLDUgMTI1LDkgMTE4LDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U4Qzg0QSIgc3Ryb2tlLXdpZHRoPSIwLjYiIG9wYWNpdHk9IjAuNSIvPjxsaW5lIHgxPSIxNTUiIHkxPSI1IiB4Mj0iMjYwIiB5Mj0iNSIgc3Ryb2tlPSIjRThDODRBIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4zIi8+PC9zdmc+" alt=""/></div>
+    <div class="cat-title">Beverages</div>
+    <div class="item">
+      <span class="item-name">Mango Lassi</span>
+      <span class="item-price">₹120</span>
+    </div>
+    <div class="item">
+      <span class="item-name">Masala Chai</span>
+      <span class="item-price">₹60</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxsaW5lIHgxPSIwIiB5MT0iNyIgeDI9IjUyIiB5Mj0iNyIgc3Ryb2tlPSIjRThDODRBIiBzdHJva2Utd2lkdGg9IjAuNyIgb3BhY2l0eT0iMC41NSIvPjxjaXJjbGUgY3g9IjYwIiBjeT0iNyIgcj0iMS41IiBmaWxsPSIjRThDODRBIiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjciIHI9IjIuNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRThDODRBIiBzdHJva2Utd2lkdGg9IjAuNyIgb3BhY2l0eT0iMC43Ii8+PGNpcmNsZSBjeD0iODAiIGN5PSI3IiByPSIxLjUiIGZpbGw9IiNFOEM4NEEiIG9wYWNpdHk9IjAuNiIvPjxsaW5lIHgxPSI4OCIgeTE9IjciIHgyPSIxNDAiIHkyPSI3IiBzdHJva2U9IiNFOEM4NEEiIHN0cm9rZS13aWR0aD0iMC43IiBvcGFjaXR5PSIwLjU1Ii8+PC9zdmc+" alt="ornament"/>
+  <div class="footer-text">SCAN FOR TODAY'S MENU</div>
+</div>
+
+<script>
+var d = new Date();
+var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+document.getElementById('date-line').textContent = days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()];
+</script>
+
+</body>
+</html>
